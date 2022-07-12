@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="qlns" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.qlns.entity.Luong</class>
+        <class>com.company.qlns.entity.DapAn</class>
+        <class>com.company.qlns.entity.UngVien</class>
+        <class>com.company.qlns.entity.CauHoi</class>
+        <class>com.company.qlns.entity.ChuyenNganh</class>
+        <class>com.company.qlns.entity.PhanCong</class>
+    </persistence-unit>
+</persistence>

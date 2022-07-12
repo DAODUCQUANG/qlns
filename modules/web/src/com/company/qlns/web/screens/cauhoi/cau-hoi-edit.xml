@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://cauHoiEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.qlns.web.screens.cauhoi">
+    <data>
+        <instance id="cauHoiDc"
+                  class="com.company.qlns.entity.CauHoi">
+            <view extends="_local">
+                <property name="dapAn" view="_minimal"/>
+                <property name="dapAnDung" view="_minimal"/>
+                <property name="chuyenNganh" view="_minimal"/>
+            </view>
+            <loader/>
+            <instance id="dapAnDungDc" property="dapAnDung"/>
+            <collection id="dapAnDc" property="dapAn"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="cauHoiDc">
+            <column width="350px">
+                <pickerField id="chuyenNganhField" property="chuyenNganh">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <textField id="tenCauHoiField" property="tenCauHoi"/>
+                <pickerField id="dapAnDungField" property="dapAnDung">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+            </column>
+        </form>
+        <groupBox id="dapAnBox" caption="msg://com.company.qlns.entity/CauHoi.dapAn">
+            <table id="dapAnTable" dataContainer="dapAnDc" width="100%" height="200px">
+                <actions>
+                    <action id="create" type="create"/>
+                    <action id="edit" type="edit"/>
+                    <action id="remove" type="remove"/>
+                </actions>
+                <columns>
+                    <column id="tenDapAn" caption="msg://tenDapAn.caption"/>
+                </columns>
+                <buttonsPanel>
+                    <button action="dapAnTable.create"/>
+                    <button action="dapAnTable.edit"/>
+                    <button action="dapAnTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

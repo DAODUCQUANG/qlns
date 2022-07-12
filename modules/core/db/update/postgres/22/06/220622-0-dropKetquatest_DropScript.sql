@@ -1,0 +1,1 @@
+drop table if exists QLNS_KETQUATEST__U75295 cascade ;

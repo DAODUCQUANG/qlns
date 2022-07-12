@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://cauHoiBrowse.caption"
+        focusComponent="cauHoisTable"
+        messagesPack="com.company.qlns.web.screens.cauhoi">
+    <data readOnly="true">
+        <collection id="cauHoisDc"
+                    class="com.company.qlns.entity.CauHoi">
+            <view extends="_local">
+                <property name="dapAn" view="_minimal"/>
+                <property name="dapAnDung" view="_minimal"/>
+            </view>
+            <loader id="cauHoisDl">
+                <query>
+                    <![CDATA[select e from qlns_CauHoi e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="cauHoisTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="cauHoisTable"
+                dataLoader="cauHoisDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="cauHoisTable"
+                    width="100%"
+                    dataContainer="cauHoisDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="tenCauHoi"/>
+                <column id="dapAnDung"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="cauHoisTable.create"/>
+                <button id="editBtn" action="cauHoisTable.edit"/>
+                <button id="removeBtn" action="cauHoisTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

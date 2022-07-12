@@ -1,0 +1,4 @@
+alter table QLNS_CAU_HOI add constraint FK_QLNS_CAU_HOI_ON_DAP_AN_DUNG foreign key (DAP_AN_DUNG_ID) references QLNS_DAP_AN_DUNG(ID);
+alter table QLNS_CAU_HOI add constraint FK_QLNS_CAU_HOI_ON_CHUYEN_NGANH foreign key (CHUYEN_NGANH_ID) references QLNS_CHUYEN_NGANH(ID);
+create index IDX_QLNS_CAU_HOI_ON_DAP_AN_DUNG on QLNS_CAU_HOI (DAP_AN_DUNG_ID);
+create index IDX_QLNS_CAU_HOI_ON_CHUYEN_NGANH on QLNS_CAU_HOI (CHUYEN_NGANH_ID);

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://thongBaoNopBai.caption"
+        messagesPack="com.company.qlns.web.screens.thongbao.thongbaonopbai" icon="ENVELOPE_OPEN_O">
+    <layout>
+        <vbox spacing="true">
+            <label id="tongSoCauHoiLabel"/>
+            <label id="tongSoCauTraLoiDuocLabel"/>
+            <label id="soCauChuaTraLoiLabel"></label>
+            <label id="tongSoCauTraLoiDungLabel"></label>
+            <label id = "tongSoCauTraLoiSaiLabel"/>
+        </vbox>
+    </layout>
+
+</window>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://phanCongEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.qlns.web.screens.phancong">
+    <data>
+        <instance id="phanCongDc"
+                  class="com.company.qlns.entity.PhanCong">
+            <view extends="_local">
+                <property name="ungVien" view="_minimal">
+                    <property name="tenUngVien"/>
+                    <property name="email"/>
+                    <property name="soDienThoai"/>
+                </property>
+                <property name="chuyenNganh" view="_minimal">
+                    <property name="tenChuyenNganh"/>
+                </property>
+            </view>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <facets>
+        <notification id="thongBaoPhanCongNotification"
+                      caption="Ứng viên này đã được phân công!"
+                      type="TRAY"/>
+    </facets>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="phanCongDc">
+            <column width="350px">
+                <pickerField id="ungVienField" property="ungVien">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <pickerField id="chuyenNganhField" property="chuyenNganh">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

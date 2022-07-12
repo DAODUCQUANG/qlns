@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://ungVienBrowse.caption"
+        focusComponent="ungViensTable"
+        messagesPack="com.company.qlns.web.screens.ungvien">
+    <data readOnly="true">
+        <collection id="ungViensDc"
+                    class="com.company.qlns.entity.UngVien">
+            <view extends="_local"/>
+            <loader id="ungViensDl">
+                <query>
+                    <![CDATA[select e from qlns_UngVien e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="ungViensTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="ungViensTable"
+                dataLoader="ungViensDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="ungViensTable"
+                    width="100%"
+                    dataContainer="ungViensDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+                <action id="dowload" type="excel"/>
+            </actions>
+            <columns>
+                <column id="tenUngVien" caption="msg://tenUngVien.caption"/>
+                <column id="email" caption="msg://email.caption"/>
+                <column id="soDienThoai" caption="msg://soDienThoai.caption"/>
+                <column id="diaChi" caption="msg://diaChi.caption"/>
+                <column id="moTa" caption="msg://moTa.caption"/>
+                <column id="tongSoCauHoi" caption="msg://tongSoCauHoi.caption"/>
+                <column id="tongSoCauTraLoiDuoc" caption="msg://tongSoCauTraLoiDuoc.caption"/>
+                <column id="tongSoCauTraLoiDung" caption="msg://tongSoCauTraLoiDung.caption"/>
+                <column id="soDiemDatDuoc" caption="Điểm đạt được"/>
+                <column id="ketQuaPheDuyet" caption="msg://ketQuaPheDuyet.caption"/>
+                <column id="actionTaiVe" caption="msg://action.caption" generator="taiVe"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="ungViensTable.create"/>
+                <button id="editBtn" action="ungViensTable.edit"/>
+                <button id="removeBtn" action="ungViensTable.remove"/>
+                <hbox spacing="true">
+                    <label id ="ketQuaPheDuyetLabel" value="msg://ketQuaPheDuyetLabel.value"/>
+                    <lookupField id="ketQuaPheDuyetLookupField"/>
+                </hbox>
+
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

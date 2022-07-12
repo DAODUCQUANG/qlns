@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-qlns" insertBefore="administration" caption="mainMsg://menu_config.application-qlns">
+        <item screen="qlns_PhanCong.browse" caption="mainMsg://menu_config.qlns_PhanCong.browse"/>
+        <item screen="qlns_ChuyenNganh.browse" caption="mainMsg://menu_config.qlns_ChuyenNganh.browse"/>
+        <item screen="qlns_QuanLyCauHoi.browse" caption="mainMsg://menu_config.qlns_QuanLyCauHoi.browse"/>
+        <item screen="qlns_UngVien.browse" caption="mainMsg://menu_config.qlns_UngVien.browse"/>
+        <item screen="qlns_Baithiungvien" caption="mainMsg://menu_config.qlns_Baithiungvien"/>
+    </menu>
+</menu-config>

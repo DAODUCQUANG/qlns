@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://phanCongBrowse.caption"
+        focusComponent="phanCongsTable"
+        messagesPack="com.company.qlns.web.screens.phancong">
+    <data readOnly="true">
+        <collection id="phanCongsDc"
+                   class="com.company.qlns.entity.PhanCong">
+            <view extends="_local">
+                <property name="ungVien" view="_minimal">
+                    <property name="tenUngVien"/>
+                    <property name="email"/>
+                    <property name="soDienThoai"/>
+                </property>
+                <property name="chuyenNganh" view="_minimal">
+                    <property name="tenChuyenNganh"/>
+                </property>
+            </view>
+            <loader id="phanCongsDl">
+                <query>
+                    <![CDATA[select e from qlns_PhanCong e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="phanCongsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="phanCongsTable"
+                dataLoader="phanCongsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="phanCongsTable"
+                    width="100%"
+                    dataContainer="phanCongsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="ungVien" caption="msg://ungVien.caption"/>
+                <column id="chuyenNganh" caption="msg://chuyenNganh.caption"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="phanCongsTable.create"/>
+                <button id="editBtn" action="phanCongsTable.edit"/>
+                <button id="removeBtn" action="phanCongsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

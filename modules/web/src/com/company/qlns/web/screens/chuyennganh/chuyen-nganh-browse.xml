@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://chuyenNganhBrowse.caption"
+        focusComponent="chuyenNganhsTable"
+        messagesPack="com.company.qlns.web.screens.chuyennganh">
+    <data readOnly="true">
+        <collection id="chuyenNganhsDc"
+                    class="com.company.qlns.entity.ChuyenNganh">
+            <view extends="_local">
+                <property name="cauHoi" view="_minimal"/>
+            </view>
+            <loader id="chuyenNganhsDl">
+                <query>
+                    <![CDATA[select e from qlns_ChuyenNganh e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="chuyenNganhsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="chuyenNganhsTable"
+                dataLoader="chuyenNganhsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="chuyenNganhsTable"
+                    width="100%"
+                    dataContainer="chuyenNganhsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="tenChuyenNganh" caption="msg://tenChuyenNganh.caption"/>
+                <column id="thoiGian" caption="Thời gian"/>
+                <column id="diemYeuCau" caption="Điểm yêu cầu"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="chuyenNganhsTable.create"/>
+                <button id="editBtn" action="chuyenNganhsTable.edit"/>
+                <button id="removeBtn" action="chuyenNganhsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

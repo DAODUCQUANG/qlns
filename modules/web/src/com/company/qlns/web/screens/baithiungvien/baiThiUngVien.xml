@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://baithiungvien.caption" focusComponent="nextButton"
+        messagesPack="com.company.qlns.web.screens.baithiungvien">
+    <layout>
+        <vbox spacing="true">
+            <hbox spacing="true" align="TOP_CENTER">
+                <label id="textSoCauDaTraLoiLabel" stylename="canChinhSoCauDaTraLoi" value="msg://textSoCauDaTraLoiLabel.value"/>
+                <label id="soCauDaTraLoiLabel" stylename="soCauTraLoi"></label>
+            </hbox>
+            <hbox spacing="true" align="TOP_CENTER">
+                <label id="tenUngVien"/>
+                <label id="chuyenNganh"/>
+            </hbox>
+            <hbox spacing="true" align="TOP_CENTER">
+                <label id = "textThoiGianLabel" stylename="thoiGian" value="msg://label2.value"/>
+                <label id = "thoiGianLamBaiLabel" stylename="textThoiGian"/>
+            </hbox>
+
+            <vbox stylename="containerCauHoi">
+                <label css="width:100px" id="tenCauHoiLabel"/>
+                <vbox stylename="dapAn">
+                    <radioButtonGroup id="dapAnRadio"/>
+                </vbox>
+            </vbox>
+
+            <hbox stylename="containerButton" align="TOP_CENTER">
+                <button id="submit" caption="msg://submit.caption" stylename="buttonNopBai"/>
+                <hbox align="TOP_RIGHT">
+                    <button id="nextButton" caption="msg://nextButton.caption" stylename="buttonTiepTheo"/>
+                </hbox>
+            </hbox>
+        </vbox>
+    </layout>
+</window>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://ungVienEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.qlns.web.screens.ungvien">
+    <data>
+        <instance id="ungVienDc"
+                  class="com.company.qlns.entity.UngVien">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <facets>
+        <notification id="thongBaoEmailNotification"
+                      caption="Email đã tồn tại"
+                      type="TRAY"/>
+    </facets>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="ungVienDc">
+            <column width="350px">
+                <textField id="tenUngVienField" property="tenUngVien" caption="msg://tenUngVienField.caption"/>
+                <textField id="emailField" property="email"/>
+                <textField id="soDienThoaiField" property="soDienThoai" caption="msg://soDienThoaiField.caption"/>
+                <textField id="diaChiField" property="diaChi" caption="msg://diaChiField.caption"/>
+                <textField id="moTaField" property="moTa" caption="msg://moTaField.caption"/>
+                <textField id="tongSoCauHoiField" property="tongSoCauHoi" caption="msg://tongSoCauHoiField.caption"/>
+                <textField id="tongSoCauTraLoiDuocField" property="tongSoCauTraLoiDuoc"
+                           caption="Tổng số câu trả lời được"/>
+                <textField id="tongSoCauTraLoiDungField" property="tongSoCauTraLoiDung"
+                           caption="Tổng số câu trả lời đúng"/>
+                <textField id="diemUngVien" property="soDiemDatDuoc"
+                           caption="Điểm ứng viên"/>
+                <checkBox id="ketQuaPheDuyetField" property="ketQuaPheDuyet"
+                          caption="msg://ketQuaPheDuyetField.caption"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

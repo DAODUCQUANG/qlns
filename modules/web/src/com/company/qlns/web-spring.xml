@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:gui="http://schemas.haulmont.com/cuba/spring/cuba-gui.xsd">
+
+    <!-- Annotation-based beans -->
+    <context:component-scan base-package="com.company.qlns"/>
+    
+    <gui:screens base-packages="com.company.qlns.web"/>
+    <bean id="qlns_proxyCreator" class="com.haulmont.cuba.web.sys.remoting.WebRemoteProxyBeanCreator">
+        <property name="serverSelector" ref="cuba_ServerSelector"/>
+        <property name="remoteServices">
+            <map>
+                <entry key="qlns_ChuyenNganhService" value="com.company.qlns.service.chuyennganh.ChuyenNganhService"/>
+                <entry key="qlns_CauHoiService" value="com.company.qlns.service.cauhoi.CauHoiService"/>
+                <entry key="qlns_DapAnService" value="com.company.qlns.service.dapan.DapAnService"/>
+                <entry key="qlns_UngVienService" value="com.company.qlns.service.ungvien.UngVienService"/>
+                <entry key="qlns_PhanCongService" value="com.company.qlns.service.phancong.PhanCongService"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>

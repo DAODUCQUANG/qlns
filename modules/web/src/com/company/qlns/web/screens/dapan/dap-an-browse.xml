@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://dapAnBrowse.caption"
+        focusComponent="dapAnsTable"
+        messagesPack="com.company.qlns.web.screens.dapan">
+    <data readOnly="true">
+        <collection id="dapAnsDc"
+                    class="com.company.qlns.entity.DapAn">
+            <view extends="_local">
+                <property name="cauHoi" view="_minimal"/>
+            </view>
+            <loader id="dapAnsDl">
+                <query>
+                    <![CDATA[select e from qlns_DapAn e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="dapAnsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="dapAnsTable"
+                dataLoader="dapAnsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="dapAnsTable"
+                    width="100%"
+                    dataContainer="dapAnsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="tenDapAn" caption="msg://tenDapAn.caption"/>
+                <column id="cauHoi"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="dapAnsTable.create"/>
+                <button id="editBtn" action="dapAnsTable.edit"/>
+                <button id="removeBtn" action="dapAnsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

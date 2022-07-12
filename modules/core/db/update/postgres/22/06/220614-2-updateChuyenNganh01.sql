@@ -1,0 +1,2 @@
+alter table QLNS_CHUYEN_NGANH add constraint FK_QLNS_CHUYEN_NGANH_ON_CAU_HOI foreign key (CAU_HOI_ID) references QLNS_CAU_HOI(ID);
+create index IDX_QLNS_CHUYEN_NGANH_ON_CAU_HOI on QLNS_CHUYEN_NGANH (CAU_HOI_ID);
