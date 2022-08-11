@@ -56,7 +56,7 @@
                     <label id ="ketQuaPheDuyetLabel" value="msg://ketQuaPheDuyetLabel.value"/>
                     <lookupField id="ketQuaPheDuyetLookupField"/>
                 </hbox>
-
+                <button css="text-decoration: none" id="pdfButton" captionAsHtml="true" caption="msg://pdfButton" />
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

@@ -1,14 +1,13 @@
 package com.company.qlns.web.screens.quanlycauhoi;
 
 import com.company.qlns.service.chuyennganh.ChuyenNganhService;
-import com.haulmont.cuba.core.entity.Entity;
-import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.gui.components.*;
+import com.haulmont.cuba.gui.export.ExportDisplay;
+import com.haulmont.cuba.gui.export.ExportFormat;
 import com.haulmont.cuba.gui.model.CollectionLoader;
 import com.haulmont.cuba.gui.screen.*;
 import com.company.qlns.entity.CauHoi;
 import com.haulmont.cuba.gui.screen.LookupComponent;
-
 import javax.inject.Inject;
 
 @UiController("qlns_QuanLyCauHoi.browse")

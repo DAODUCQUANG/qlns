@@ -16,14 +16,12 @@
                 <label id = "textThoiGianLabel" stylename="thoiGian" value="msg://label2.value"/>
                 <label id = "thoiGianLamBaiLabel" stylename="textThoiGian"/>
             </hbox>
-
             <vbox stylename="containerCauHoi">
                 <label css="width:100px" id="tenCauHoiLabel"/>
                 <vbox stylename="dapAn">
                     <radioButtonGroup id="dapAnRadio"/>
                 </vbox>
             </vbox>
-
             <hbox stylename="containerButton" align="TOP_CENTER">
                 <button id="submit" caption="msg://submit.caption" stylename="buttonNopBai"/>
                 <hbox align="TOP_RIGHT">

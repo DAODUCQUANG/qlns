@@ -107,7 +107,6 @@ public class Baithiungvien extends Screen {
             nextButton.setVisible(false);
         }
         System.out.println("COUNT IN BTN NEXT:" + count);
-
     }
 
     @Subscribe
@@ -126,7 +125,6 @@ public class Baithiungvien extends Screen {
         UUID idChuyenNganh = chuyenNganhService.getIdChuyenNganh(userSessionSource.getUserSession().getUser().getLogin());
         nopBaiVaHienThiKetQua(idChuyenNganh);
     }
-
 
     private void demNguoc(UUID idChuyenNganh) {
         BackgroundTask<Integer, Void> task = new BackgroundTask<Integer, Void>(chuyenNganhService.getChuyenNganh(idChuyenNganh).getThoiGian(), this) {

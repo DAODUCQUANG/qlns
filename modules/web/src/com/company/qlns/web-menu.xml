@@ -6,5 +6,6 @@
         <item screen="qlns_QuanLyCauHoi.browse" caption="mainMsg://menu_config.qlns_QuanLyCauHoi.browse"/>
         <item screen="qlns_UngVien.browse" caption="mainMsg://menu_config.qlns_UngVien.browse"/>
         <item screen="qlns_Baithiungvien" caption="mainMsg://menu_config.qlns_Baithiungvien"/>
+        <item screen="qlns_ScreenUser" caption="mainMsg://menu_config.qlns_ScreenUser"/>
     </menu>
 </menu-config>

@@ -50,7 +50,4 @@ public class PhanCongEdit extends StandardEditor<PhanCong> {
             }
         }
     }
-
-
-
 }
