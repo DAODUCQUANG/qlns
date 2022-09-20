@@ -16,6 +16,7 @@
                 <entry key="qlns_DapAnService" value="com.company.qlns.service.dapan.DapAnService"/>
                 <entry key="qlns_UngVienService" value="com.company.qlns.service.ungvien.UngVienService"/>
                 <entry key="qlns_PhanCongService" value="com.company.qlns.service.phancong.PhanCongService"/>
+                <entry key="qlns_UserService" value="com.company.qlns.service.user.UserService"/>
             </map>
         </property>
     </bean>

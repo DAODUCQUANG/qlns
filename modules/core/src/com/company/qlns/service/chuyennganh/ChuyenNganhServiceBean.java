@@ -54,4 +54,16 @@ public class ChuyenNganhServiceBean implements ChuyenNganhService {
             return chuyenNganh;
         }
     }
+    @Override
+    public ChuyenNganh getChuyenNganhByName(String tenChuyenNganh) {
+        ChuyenNganh chuyenNganh;
+        try(Transaction tx = persistence.createTransaction()) {
+            EntityManager em = persistence.getEntityManager();
+            Query query = em.createNativeQuery("select * from qlns_chuyen_nganh e where e.ten_chuyen_nganh = #tenChuyenNganh",ChuyenNganh.class)
+                    .setParameter("tenChuyenNganh", tenChuyenNganh);
+            chuyenNganh = (ChuyenNganh) query.getSingleResult();
+            tx.commit();
+            return chuyenNganh;
+        }
+    }
 }

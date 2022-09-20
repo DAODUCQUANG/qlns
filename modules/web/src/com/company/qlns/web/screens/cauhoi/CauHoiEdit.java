@@ -24,6 +24,8 @@ public class CauHoiEdit extends StandardEditor<CauHoi> {
     private ScreenBuilders screenBuilders;
     @Inject
     private PickerField<DapAn> dapAnDungField;
+    @Inject
+    private PickerField<ChuyenNganh> chuyenNganhField;
 
     @Subscribe("dapAnDungField.lookup")
     public void onDapAnDungFieldLookup(Action.ActionPerformedEvent event) {
@@ -33,5 +35,10 @@ public class CauHoiEdit extends StandardEditor<CauHoi> {
         screenBuilders.lookup(dapAnDungField)
                 .withOptions(mapScreenOptions)
                 .withOpenMode(OpenMode.NEW_TAB).build().show();
+    }
+
+    @Subscribe
+    public void onInit(InitEvent event) {
+
     }
 }

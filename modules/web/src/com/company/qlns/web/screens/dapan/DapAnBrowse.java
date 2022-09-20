@@ -33,5 +33,4 @@ public class DapAnBrowse extends StandardLookup<DapAn> {
             dapAnsDl.load();
         }
     }
-    
 }

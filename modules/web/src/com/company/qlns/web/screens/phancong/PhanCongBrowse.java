@@ -1,5 +1,6 @@
 package com.company.qlns.web.screens.phancong;
 
+import com.company.qlns.service.cauhoi.CauHoiService;
 import com.haulmont.cuba.gui.ScreenBuilders;
 import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.gui.screen.*;
@@ -13,5 +14,4 @@ import java.util.Map;
 @LookupComponent("phanCongsTable")
 @LoadDataBeforeShow
 public class PhanCongBrowse extends StandardLookup<PhanCong> {
-
 }

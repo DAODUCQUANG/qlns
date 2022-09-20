@@ -20,9 +20,9 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="ungVienDc">
             <column width="350px">
-                <textField id="tenUngVienField" property="tenUngVien" caption="msg://tenUngVienField.caption"/>
-                <textField id="emailField" property="email"/>
-                <textField id="soDienThoaiField" property="soDienThoai" caption="msg://soDienThoaiField.caption"/>
+                <textField id="tenUngVienField" property="tenUngVien" caption="msg://UngVien.tenUngVien"/>
+                <textField id="emailField" caption="msg://UngVien.email" property="email"/>
+                <textField id="soDienThoaiField" property="soDienThoai" caption="msg://UngVien.soDienThoai"/>
                 <textField id="diaChiField" property="diaChi" caption="msg://diaChiField.caption"/>
                 <textField id="moTaField" property="moTa" caption="msg://moTaField.caption"/>
                 <textField id="tongSoCauHoiField" property="tongSoCauHoi" caption="msg://tongSoCauHoiField.caption"/>
@@ -30,9 +30,9 @@
                            caption="Tổng số câu trả lời được"/>
                 <textField id="tongSoCauTraLoiDungField" property="tongSoCauTraLoiDung"
                            caption="Tổng số câu trả lời đúng"/>
-                <textField id="diemUngVien" property="soDiemDatDuoc"
+                <textField id="diemUngVienField" property="soDiemDatDuoc"
                            caption="Điểm ứng viên"/>
-                <checkBox id="ketQuaPheDuyetField" property="ketQuaPheDuyet"
+                <checkBox id="ketQuaPheDuyetCheckBox" property="ketQuaPheDuyet"
                           caption="msg://ketQuaPheDuyetField.caption"/>
             </column>
         </form>

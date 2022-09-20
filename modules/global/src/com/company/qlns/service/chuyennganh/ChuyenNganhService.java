@@ -10,4 +10,5 @@ public interface ChuyenNganhService {
     UUID getIdChuyenNganh(String emails);
     List<String> getTenChuyenNganh();
     ChuyenNganh getChuyenNganh(UUID idChuyenNganh);
+    ChuyenNganh getChuyenNganhByName(String nameChuyenNganh);
 }

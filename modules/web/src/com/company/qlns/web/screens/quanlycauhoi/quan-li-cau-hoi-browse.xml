@@ -22,6 +22,10 @@
     </data>
     <dialogMode height="600"
                 width="800"/>
+
+    <facets>
+        <notification id="notification_2"/>
+    </facets>
     <layout>
         <split id="split" height="100%" orientation="horizontal" reversePosition="true" width="100%">
             <vbox id="lookupBox" expand="table" height="100%" margin="true,false,false,false" spacing="true">
@@ -44,12 +48,12 @@
                     <buttonsPanel id="buttonsPanel"
                                   alwaysVisible="true">
 
-                        <button id="createBtn" action="table.create"/>
-<!--                        <button id="createBtn"/>-->
+                        <button id="createCauHoi" caption="Create"/>
                         <button id="editBtn" action="table.edit"/>
                         <button id="removeBtn" action="table.remove"/>
-                        <lookupField id="tenChuyenNganhLookupField" />
+                        <lookupField id="tenChuyenNganhLookupField" nullName="--Chuyên ngành--"/>
                         <label id="label"/>
+
                     </buttonsPanel>
                 </table>
                 <!--        <lookupField dataContainer="chuyenNganhsDC"-->

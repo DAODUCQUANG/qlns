@@ -8,5 +8,6 @@
         <class>com.company.qlns.entity.CauHoi</class>
         <class>com.company.qlns.entity.ChuyenNganh</class>
         <class>com.company.qlns.entity.PhanCong</class>
+        <class>com.company.qlns.entity.DeTai</class>
     </persistence-unit>
 </persistence>

@@ -2,6 +2,7 @@ package com.company.qlns.web.screens.ungvien;
 
 import com.company.qlns.service.ungvien.UngVienService;
 import com.haulmont.cuba.core.global.PersistenceHelper;
+import com.haulmont.cuba.gui.components.CheckBox;
 import com.haulmont.cuba.gui.components.NotificationFacet;
 import com.haulmont.cuba.gui.components.TextField;
 import com.haulmont.cuba.gui.screen.*;
@@ -27,12 +28,18 @@ public class UngVienEdit extends StandardEditor<UngVien> {
     @Inject
     private NotificationFacet thongBaoEmailNotification;
     private boolean checkSuKien = false;
+    @Inject
+    private TextField<String> diemUngVienField;
+    @Inject
+    private CheckBox ketQuaPheDuyetCheckBox;
 
     @Subscribe
-    public void onInitEntity(InitEntityEvent<UngVien> event) {
-                tongSoCauHoiField.setEnabled(false);
-                tongSoCauTraLoiDungField.setEnabled(false);
-                tongSoCauTraLoiDuocField.setEnabled(false);
+    public void onInit(InitEvent event) {
+        tongSoCauHoiField.setEnabled(false);
+        tongSoCauTraLoiDungField.setEnabled(false);
+        tongSoCauTraLoiDuocField.setEnabled(false);
+        diemUngVienField.setEnabled(false);
+        ketQuaPheDuyetCheckBox.setEditable(false);
     }
 
     @Subscribe

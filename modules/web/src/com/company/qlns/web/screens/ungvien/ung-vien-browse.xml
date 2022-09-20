@@ -44,7 +44,7 @@
                 <column id="tongSoCauTraLoiDung" caption="msg://tongSoCauTraLoiDung.caption"/>
                 <column id="soDiemDatDuoc" caption="Điểm đạt được"/>
                 <column id="ketQuaPheDuyet" caption="msg://ketQuaPheDuyet.caption"/>
-                <column id="actionTaiVe" caption="msg://action.caption" generator="taiVe"/>
+<!--                <column id="actionTaiVe" caption="msg://action.caption" generator="taiVe"/>-->
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
@@ -54,9 +54,12 @@
                 <button id="removeBtn" action="ungViensTable.remove"/>
                 <hbox spacing="true">
                     <label id ="ketQuaPheDuyetLabel" value="msg://ketQuaPheDuyetLabel.value"/>
-                    <lookupField id="ketQuaPheDuyetLookupField"/>
+                    <lookupField nullName="--Tất cả--" id="ketQuaPheDuyetLookupField" />
                 </hbox>
-                <button css="text-decoration: none" id="pdfButton" captionAsHtml="true" caption="msg://pdfButton" />
+                <button id="excelButton" caption="Excel"/>
+                <button id="createUser" caption="tao User"/>
+                <button id="pdfBtn" caption="Xuất PDF" icon="FILE_PDF_O" css="background-color:#CC0000 !important"/>
+<!--                <button css="text-decoration: none" id="pdfButton" captionAsHtml="true" caption="msg://pdfButton" />-->
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

@@ -13,7 +13,8 @@ public class QlnsTestContainer extends TestContainer {
         //noinspection ArraysAsListWithZeroOrOneArgument
         appComponents = Arrays.asList(
                 "com.haulmont.cuba",
-                "com.haulmont.addon.helium");
+                "com.haulmont.addon.helium",
+                "com.haulmont.addon.restapi");
         appPropertiesFiles = Arrays.asList(
                 // List the files defined in your web.xml
                 // in appPropertiesConfig context parameter of the core module

@@ -24,23 +24,23 @@
                 <textField id="diemYeuCauField" property="diemYeuCau" caption="Điểm yêu cầu"/>
             </column>
         </form>
-        <groupBox id="cauHoiBox" caption="Câu hỏi">
-            <table id="cauHoiTable" dataContainer="cauHoiDc" width="100%" height="200px">
-                <actions>
-                    <action id="create" type="create"/>
-                    <action id="edit" type="edit"/>
-                    <action id="remove" type="remove"/>
-                </actions>
-                <columns>
-                    <column id="tenCauHoi" caption="Tên câu hỏi"/>
-                </columns>
-                <buttonsPanel>
-                    <button action="cauHoiTable.create"/>
-                    <button action="cauHoiTable.edit"/>
-                    <button action="cauHoiTable.remove"/>
-                </buttonsPanel>
-            </table>
-        </groupBox>
+<!--        <groupBox id="cauHoiBox" caption="Câu hỏi">-->
+<!--            <table id="cauHoiTable" dataContainer="cauHoiDc" width="100%" height="200px">-->
+<!--                <actions>-->
+<!--                    <action id="create" type="create"/>-->
+<!--                    <action id="edit" type="edit"/>-->
+<!--                    <action id="remove" type="remove"/>-->
+<!--                </actions>-->
+<!--                <columns>-->
+<!--                    <column id="tenCauHoi" caption="Tên câu hỏi"/>-->
+<!--                </columns>-->
+<!--                <buttonsPanel>-->
+<!--                    <button action="cauHoiTable.create"/>-->
+<!--                    <button action="cauHoiTable.edit"/>-->
+<!--                    <button action="cauHoiTable.remove"/>-->
+<!--                </buttonsPanel>-->
+<!--            </table>-->
+<!--        </groupBox>-->
         <hbox id="editActions" spacing="true">
             <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
             <button id="closeBtn" action="windowClose"/>
