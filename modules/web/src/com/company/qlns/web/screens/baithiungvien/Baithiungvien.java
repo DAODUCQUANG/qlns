@@ -63,7 +63,7 @@ public class Baithiungvien extends Screen {
 
     @Subscribe
     public void onInit(InitEvent event) {
-        if (userSessionSource.getUserSession().getRoles().toString().equals("[ungvien]")) {
+        if (userSessionSource.getUserSession().getRoles().contains("ungvien")) {
             UUID idChuyenNganh = chuyenNganhService.getIdChuyenNganh(userSessionSource.getUserSession().getUser().getLogin());
             int thoiGian = chuyenNganhService.getChuyenNganh(idChuyenNganh).getThoiGian();
             phut = thoiGian / 60;
@@ -112,7 +112,7 @@ public class Baithiungvien extends Screen {
 
     @Subscribe
     public void onBeforeShow(BeforeShowEvent event) {
-        if (userSessionSource.getUserSession().getRoles().toString().equals("[ungvien]") == false) {
+        if (userSessionSource.getUserSession().getRoles().contains("ungvien") == false) {
             screenBuilders.screen(this).withScreenClass(ThongBaoQuyenVaoBaiThi.class)
                     .withOpenMode(OpenMode.DIALOG)
                     .build()
