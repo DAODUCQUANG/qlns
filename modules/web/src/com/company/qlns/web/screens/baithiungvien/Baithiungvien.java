@@ -172,7 +172,7 @@ public class Baithiungvien extends Screen {
             tongSoCauChuaTraLoi = tongSoCauHoi - count;
         }
         int tongSoCauTraLoiDuoc = tongSoCauHoi - tongSoCauChuaTraLoi;
-        float diemUngVien = (float) tongSoCauTraLoiDung / tongSoCauHoi;
+        float diemUngVien = (float) ((tongSoCauTraLoiDung / tongSoCauHoi)*10);
         if ((double)diemUngVien >= chuyenNganhService.getChuyenNganh(idChuyenNganh).getDiemYeuCau()) {
             ketQuaPheDuyet = true;
         }
