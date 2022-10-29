@@ -21,7 +21,7 @@
         <form id="form" dataContainer="ungVienDc">
             <column width="350px">
                 <textField id="tenUngVienField" property="tenUngVien" caption="msg://tenUngVienField.caption"/>
-                <textField id="emailField" property="email"/>
+                <textField id="emailField" property="email" caption="Email"/>
                 <textField id="soDienThoaiField" property="soDienThoai" caption="msg://soDienThoaiField.caption"/>
                 <textField id="diaChiField" property="diaChi" caption="msg://diaChiField.caption"/>
                 <textField id="moTaField" property="moTa" caption="msg://moTaField.caption"/>
